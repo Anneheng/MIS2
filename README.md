@@ -8,10 +8,13 @@ create view test1permit as select * from cf_privilege
 where PrivilegeOperation='Permit' and ((PrivilegeMaster='CF_Role' and PrivilegeMasterKey=(select RoleID from cf_user,cf_userrole where cf_user.UserID=cf_userrole.UserID and LoginName='test1'))
 or (PrivilegeMaster='CF_User' and PrivilegeMasterKey=(select UserID from cf_user where LoginName='test1') ));
 
-select distinct MenuID,MenuNo,MenuName,MenuUrl from sys_menu,test1permit where
+select distinct MenuNo as '编号',MenuName as '名称',MenuNo as '页面或订单' from sys_menu,test1permit where
 sys_menu.MenuID=test1permit.PrivilegeAccessKey
 
 UNION
 
-select distinct BtnID,BtnNo,BtnName,MENUNO from sys_button,test1permit where
+select distinct BtnNo,BtnName,MenuNo from sys_button,test1permit where
 sys_button.BtnID=test1permit.PrivilegeAccessKey;
+##查询结果截图
+![image]()
+![image]()
