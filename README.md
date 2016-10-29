@@ -16,5 +16,5 @@ UNION
 select distinct BtnNo,BtnName,MenuNo from sys_button,test1permit where
 sys_button.BtnID=test1permit.PrivilegeAccessKey;
 ##查询结果截图
-![image](https://github.com/Anneheng/MIS2/blob/master/1.PNG)
-![image](https://github.com/Anneheng/MIS2/blob/master/2.PNG)
+###![image](https://github.com/Anneheng/MIS2/blob/master/1.PNG)
+###![image](https://github.com/Anneheng/MIS2/blob/master/2.PNG)
